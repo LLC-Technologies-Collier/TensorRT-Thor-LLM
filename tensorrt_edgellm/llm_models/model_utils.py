@@ -264,6 +264,10 @@ def load_hf_model(
     # Convert dtype string to torch dtype
     if dtype == "fp16":
         torch_dtype = torch.float16
+    elif dtype == "float32":
+        torch_dtype = torch.float32
+    elif dtype == "bf16":
+        torch_dtype = torch.bfloat16
     else:
         raise ValueError(f"Unsupported dtype: {dtype}")
     device = torch.device(device)
@@ -393,6 +397,10 @@ def load_eagle3_draft_model(draft_model_dir: str, base_model_dir: str,
     # Convert dtype string to torch dtype
     if dtype == "fp16":
         torch_dtype = torch.float16
+    elif dtype == "float32":
+        torch_dtype = torch.float32
+    elif dtype == "bf16":
+        torch_dtype = torch.bfloat16
     else:
         raise ValueError(f"Unsupported dtype: {dtype}")
 
